@@ -1,0 +1,131 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 1,
+    "failures": -1,
+    "start": "2025-01-13T07:47:33.111Z",
+    "end": "2025-01-13T07:47:36.360Z",
+    "duration": 3249,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 50,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "b46dc6fc-01be-4222-a356-ffe4a6a35a66",
+      "title": "",
+      "fullFile": "cypress\\e2e\\dropdown.cy.js",
+      "file": "cypress\\e2e\\dropdown.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "00ce364a-2de9-4298-9537-e6c7554f5046",
+          "title": "handling dropdown & checkboxes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "handling drop down",
+              "fullTitle": "handling dropdown & checkboxes handling drop down",
+              "timedOut": null,
+              "duration": 0,
+              "state": "pending",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": true,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"#dropdown-checkboxes-radiobuttons\").invoke(\"removeAttr\", \"target\").click();\ncy.get(\"#dropdowm-menu-1\").select(\"Python\").should('have.value', \"python\");\ncy.get(\"#dropdowm-menu-2\").select(\"testng\").should('have.value', \"testng\");\ncy.get(\"#dropdowm-menu-3\").select(1).should('not.be.NaN');",
+              "err": {},
+              "uuid": "581781fe-298c-497c-b8ba-dc429a1e17c2",
+              "parentUUID": "00ce364a-2de9-4298-9537-e6c7554f5046",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "handling the checkbox",
+              "fullTitle": "handling dropdown & checkboxes handling the checkbox",
+              "timedOut": null,
+              "duration": 3154,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"#dropdown-checkboxes-radiobuttons\").invoke(\"removeAttr\", \"target\").click();\ncy.get(\"div input\").eq(1).check();\n// cy.get(\"div input\").each((ele)=>{\n//    let val=ele.text()\n//     cy.log(val)\n//     if(val==='yellow'){\n//         cy.wrap(ele).click()\n//     }\n// })\ncy.get('input[value=\"cabbage\"]').should('be.disabled');\ncy.get('input[value=\"lettuce\"]').should('be.enabled').check();",
+              "err": {},
+              "uuid": "c0854b43-9340-4384-9670-b092e5ddf259",
+              "parentUUID": "00ce364a-2de9-4298-9537-e6c7554f5046",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c0854b43-9340-4384-9670-b092e5ddf259"
+          ],
+          "failures": [],
+          "pending": [
+            "581781fe-298c-497c-b8ba-dc429a1e17c2"
+          ],
+          "skipped": [],
+          "duration": 3154,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "gitpractice report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "videoOnFailOnly": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-01-13T07:11:43.170Z",
+    "end": "2025-01-13T07:11:46.869Z",
+    "duration": 3699,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1d5536d2-b63a-4490-b7a3-e975d73ad104",
+      "title": "",
+      "fullFile": "cypress\\e2e\\popupalert.cy.js",
+      "file": "cypress\\e2e\\popupalert.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "77543ef9-e1e1-43db-a5ba-243a4a6907df",
+          "title": "handle the alerts",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "handle the popup",
+              "fullTitle": "handle the alerts handle the popup",
+              "timedOut": null,
+              "duration": 3620,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit(\"/\");\ncy.get(\"#popup-alerts\").invoke(\"removeAttr\", \"target\").click();\ncy.window().then(win => {\n  cy.stub(win, 'prompt').returns('It’s that Easy');\n});\ncy.get('#button2').click();",
+              "err": {},
+              "uuid": "8b308719-3e84-4eba-8654-d8f67a64288b",
+              "parentUUID": "77543ef9-e1e1-43db-a5ba-243a4a6907df",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8b308719-3e84-4eba-8654-d8f67a64288b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3620,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "charts": true,
+        "reportPageTitle": "gitpractice report",
+        "embeddedScreenshots": true,
+        "inlineAssets": true,
+        "saveAllAttempts": false,
+        "videoOnFailOnly": true,
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
