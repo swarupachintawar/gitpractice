@@ -14,6 +14,7 @@ module.exports = defineConfig({
   },
   e2e: {
     setupNodeEvents(on, config) {
+      require('cypress-mochawesome-reporter/plugin')(on),
       // implement node event listeners here
       on('task',{
         excelToJson(filePath){
@@ -24,6 +25,7 @@ module.exports = defineConfig({
         }
       })
     },
+    
     watchForFileChanges:false,
     baseUrl:"https://www.webdriveruniversity.com/"
   },
