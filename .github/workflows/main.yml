@@ -1,30 +1,37 @@
-name: End-To-End Tests
-on: [push]
+name: End-to-end tests
+on: [push, pull_request]
 
 jobs:
-cypress-chrome:
-runs-on: ubuntu-latest
- strategy:
-      matrix:
-        node: [ 14, 16, 18 ]
-steps:
-  - name: Chechkout repo
-     uses: cypress-io/github-action@v4
-        with:
-          node-version: ${{ matrix.node }}
-
-  - name: Install dependencies
-      run: npm install
-
-   - name: Run Cypress on Chrome
-      run: npm run cy:chrome   
-
-cypress-report:
-    needs: [cypress-chrome]
-    runs-on: ubuntu-latest
+  cypress-chrome:
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress on Chrome
+        run: npm run cy:chrome
+
+  cypress-firefox:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress on Firefox
+        run: npm run cy:firefox
+
+  cypress-report:
+    needs: [cypress-chrome, cypress-firefox]
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Install dependencies
         run: npm install
@@ -37,4 +44,4 @@ cypress-report:
         if: always()
         with: 
           name: cy-report
-          path: cypress/reports/html  
+          path: cypress/reports/html
