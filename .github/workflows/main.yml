@@ -12,7 +12,7 @@ jobs:
         run: npm install
 
       - name: Run Cypress on Chrome
-        run: npm run cy:chrome
+        run: npx cypress run --browser chrome
 
   cypress-firefox:
     runs-on: ubuntu-22.04
@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Run Cypress on Firefox
-        run: npm run cy:firefox
+        run: npx cypress run --browser firefox
 
   cypress-report:
     needs: [cypress-chrome, cypress-firefox]
